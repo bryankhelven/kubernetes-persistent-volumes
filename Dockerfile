@@ -1,10 +1,17 @@
-FROM node:16-alpine
+# Imagem base
+FROM node:14
 
-WORKDIR /usr/src/app
+# Configuração do diretório de trabalho
+WORKDIR /app
 
-COPY ./app/package*.json ./
+# Copiar os arquivos do projeto
+COPY . .
+
+# Instalar dependências
 RUN npm install
-COPY ./app .
 
+# Expor a porta da aplicação
 EXPOSE 3000
-CMD ["npm", "start"]
+
+# Comando para rodar o servidor
+CMD ["node", "server.js"]

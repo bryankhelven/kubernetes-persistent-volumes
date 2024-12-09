@@ -1,0 +1,28 @@
+name: CI/CD Pipeline for Kubernetes Project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-node:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: |
+          cd app
+          npm install
+      - name: Run Tests
+        run: |
+          cd app
+          npm test
+
+  test-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Python Script Tests
+        run: |
+          python3 -m unittest discover scripts

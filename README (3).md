@@ -85,4 +85,4 @@ Sinta-se à vontade para abrir issues ou pull requests com melhorias!
 
 ## Autor
 
-**[Bryan Khelven](https://github.com/bryankhelven)**
+**[Seu Nome](https://github.com/seu-usuario)**
